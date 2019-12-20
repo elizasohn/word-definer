@@ -43,7 +43,7 @@ describe('.clear') do
 end
 
 describe('.find') do
-  it("finds an word by id") do
+  it("finds a word by id") do
     word = Word.new("embiggen", nil)
     word.save()
     word2 = Word.new("cromulent", nil)
@@ -53,10 +53,21 @@ describe('.find') do
 end
 
 describe('#update') do
-  it("updates an word by id") do
+  it("updates a word by id") do
     word = Word.new("Blinky", nil)
     word.save()
     word.update("Blinky III")
     expect(word.name).to(eq("Blinky III"))
+  end
+end
+
+describe('#delete') do
+  it("deletes a word by id") do
+    word = Word.new("embiggen", nil)
+    word.save()
+    word2 = Word.new("cromulent", nil)
+    word2.save()
+    word.delete()
+    expect(Word.all).to(eq([word2]))
   end
 end
