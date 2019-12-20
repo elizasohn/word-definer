@@ -9,7 +9,15 @@ end
 
 describe(".all") do
   it("is empty at first") do
-    expect(Word.all()).to(eq({}))
+    expect(Word.all()).to(eq([]))
+  end
+end
+
+describe('#==') do
+  it("is the same word if it has the same attributes as another word") do
+    word = Word.new("embiggen", nil)
+    word2 = Word.new("embiggen", nil)
+    expect(word).to(eq(word2))
   end
 end
 
