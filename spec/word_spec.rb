@@ -41,3 +41,13 @@ describe('.clear') do
     expect(Word.all).to(eq([]))
   end
 end
+
+describe('.find') do
+  it("finds an word by id") do
+    word = Word.new("embiggen", nil)
+    word.save()
+    word2 = Word.new("cromulent", nil)
+    word2.save()
+    expect(Word.find(word.id)).to(eq(word))
+  end
+end
