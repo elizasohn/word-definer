@@ -5,69 +5,70 @@ describe '#Word' do
   before(:each) do
     Word.clear()
   end
-end
 
-describe(".all") do
-  it("is empty at first") do
-    expect(Word.all()).to(eq([]))
+
+  describe(".all") do
+    it("is empty at first") do
+      expect(Word.all()).to(eq([]))
+    end
   end
-end
 
-describe('#==') do
-  it("is the same word if it has the same attributes as another word") do
-    word = Word.new("embiggen", nil)
-    word2 = Word.new("embiggen", nil)
-    expect(word).to(eq(word2))
+  describe('#==') do
+    it("is the same word if it has the same attributes as another word") do
+      word = Word.new("embiggen", nil)
+      word2 = Word.new("embiggen", nil)
+      expect(word).to(eq(word2))
+    end
   end
-end
 
-describe('#save') do
-  it("saves a word") do
-    word = Word.new("embiggen", nil)
-    word.save()
-    word2 = Word.new("cromulent", nil)
-    word2.save()
-    expect(Word.all).to(eq([word, word2]))
+  describe('#save') do
+    it("saves a word") do
+      word = Word.new("embiggen", nil)
+      word.save()
+      word2 = Word.new("cromulent", nil)
+      word2.save()
+      expect(Word.all).to(eq([word, word2]))
+    end
   end
-end
 
-describe('.clear') do
-  it("clears all words") do
-    word = Word.new("embiggen", nil)
-    word.save()
-    word2 = Word.new("cromulent", nil)
-    word2.save()
-    Word.clear()
-    expect(Word.all).to(eq([]))
+  describe('.clear') do
+    it("clears all words") do
+      word = Word.new("embiggen", nil)
+      word.save()
+      word2 = Word.new("cromulent", nil)
+      word2.save()
+      Word.clear()
+      expect(Word.all).to(eq([]))
+    end
   end
-end
 
-describe('.find') do
-  it("finds a word by id") do
-    word = Word.new("embiggen", nil)
-    word.save()
-    word2 = Word.new("cromulent", nil)
-    word2.save()
-    expect(Word.find(word.id)).to(eq(word))
+  describe('.find') do
+    it("finds a word by id") do
+      word = Word.new("embiggen", nil)
+      word.save()
+      word2 = Word.new("cromulent", nil)
+      word2.save()
+      expect(Word.find(word.id)).to(eq(word))
+    end
   end
-end
 
-describe('#update') do
-  it("updates a word by id") do
-    word = Word.new("Blinky", nil)
-    word.save()
-    word.update("Blinky III")
-    expect(word.name).to(eq("Blinky III"))
+  describe('#update') do
+    it("updates a word by id") do
+      word = Word.new("Blinky", nil)
+      word.save()
+      word.update("Blinky III")
+      expect(word.name).to(eq("Blinky III"))
+    end
   end
-end
 
-describe('#delete') do
-  it("deletes a word by id") do
-    word = Word.new("embiggen", nil)
-    word.save()
-    word2 = Word.new("cromulent", nil)
-    word2.save()
-    word.delete()
-    expect(Word.all).to(eq([word2]))
+  describe('#delete') do
+    it("deletes a word by id") do
+      word = Word.new("embiggen", nil)
+      word.save()
+      word2 = Word.new("cromulent", nil)
+      word2.save()
+      word.delete()
+      expect(Word.all).to(eq([word2]))
+    end
   end
 end
