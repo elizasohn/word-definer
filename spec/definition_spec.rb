@@ -21,7 +21,7 @@ describe '#Definition' do
   end
 
   describe('.all') do
-    it("returns a list of all songs") do
+    it("returns a list of all definitions") do
       definition = Definition.new("to make bigger", @word.id, nil)
       definition.save()
       definition2 = Definition.new("acceptable", @word.id, nil)
@@ -50,12 +50,22 @@ describe '#Definition' do
   end
 
   describe('.find') do
-  it("finds a definition by id") do
-    definition = Definition.new("to make bigger", @word.id, nil)
-    definition.save()
-    definition2 = Definition.new("acceptable", @word.id, nil)
-    definition2.save()
-    expect(Definition.find(definition.id)).to(eq(definition))
+    it("finds a definition by id") do
+      definition = Definition.new("to make bigger", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("acceptable", @word.id, nil)
+      definition2.save()
+      expect(Definition.find(definition.id)).to(eq(definition))
+    end
   end
-end
+
+  describe('#update') do
+    it("updates a definition by id") do
+      definition = Definition.new("acceptable", @word.id, nil)
+      definition.save()
+      definition.update("unacceptable", @word.id)
+      expect(definition.name).to(eq("unacceptable"))
+    end
+  end
+
 end
