@@ -12,6 +12,14 @@ describe '#Definition' do
     @word.save()
   end
 
+  describe('#==') do
+    it("is the same definition if it has the same attributes as another definition") do
+      definition = Definition.new("to make bigger", @word.id, nil)
+      definition2 = Definition.new("to make bigger", @word.id, nil)
+      expect(definition).to(eq(definition2))
+    end
+  end
+
 
   describe('.clear') do
     it("clears all definitions") do
