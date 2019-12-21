@@ -45,7 +45,10 @@ patch('/words/:id') do
 end
 
 delete('/words/:id') do
-  "This route will delete an word. We can't reach it with a URL. In a future lesson, we will use a delete button that specifies a DELETE action to reach this route."
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  @words = Word.all
+  erb(:albums)
 end
 
 get('/custom_route') do
