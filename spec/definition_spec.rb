@@ -20,6 +20,15 @@ describe '#Definition' do
     end
   end
 
+  describe('.all') do
+    it("returns a list of all songs") do
+      definition = Definition.new("to make bigger", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("acceptable", @word.id, nil)
+      definition2.save()
+      expect(Definition.all).to(eq([definition, definition2]))
+    end
+  end
 
   describe('.clear') do
     it("clears all definitions") do
