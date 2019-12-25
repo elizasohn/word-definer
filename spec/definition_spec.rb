@@ -67,7 +67,7 @@ describe '#Definition' do
       expect(definition.name).to(eq("unacceptable"))
     end
   end
-  
+
   describe('#delete') do
     it("deletes a definition by id") do
       definition = Definition.new("to make bigger", @word.id, nil)
@@ -76,6 +76,18 @@ describe '#Definition' do
       definition2.save()
       definition.delete()
       expect(Definition.all).to(eq([definition2]))
+    end
+  end
+
+  describe('.find_by_word') do
+    it("finds definitions for a word") do
+      word2 = Word.new("embiggen", nil)
+      word2.save
+      definition = Definition.new("to make bigger", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("giving bigness", word2.id , nil)
+      definition2.save()
+      expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
     end
   end
 
