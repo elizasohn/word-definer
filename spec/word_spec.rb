@@ -1,9 +1,12 @@
 require 'rspec'
 require 'word'
+require 'definition'
 
 describe '#Word' do
+
   before(:each) do
     Word.clear()
+    Definition.clear()
   end
 
   describe(".all") do
@@ -72,7 +75,7 @@ describe '#Word' do
   end
 
   describe('#definitions') do
-    it("returns an words's definitions") do
+    it("returns a word's definitions") do
       word = Word.new("embiggen", nil)
       word.save()
       definition = Definition.new("to make bigger", word.id, nil)
