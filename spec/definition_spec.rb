@@ -91,4 +91,12 @@ describe '#Definition' do
     end
   end
 
+  describe('#word') do
+    it("finds the word a definition belongs to") do
+      definition = Definition.new("to make bigger", @word.id, nil)
+      definition.save()
+      expect(definition.word()).to(eq(@word))
+    end
+  end
+
 end
