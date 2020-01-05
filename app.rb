@@ -46,7 +46,7 @@ get('/words/new') do
 end
 
 get('/words/:id') do
-  @word = Word.find(params[:id].to_i())."
+  @word = Word.find(params[:id].to_i())
   erb(:word)
 end
 
@@ -75,8 +75,4 @@ delete('/words/:id') do
   @word.delete()
   @words = Word.all
   erb(:albums)
-end
-
-get('/custom_route') do
-  "We can even create custom routes, but we should only do this when needed."
 end
