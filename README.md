@@ -30,45 +30,19 @@
 
     ## Description
 
-    _This is a Ruby Script testing for whether or not two words or sentences are anagrams or antigrams._
-
-    ## Specifications
-
-    * _**Spec:** Checks if two words are anagrams._
-      * _**Input:** "won", "now"_
-      * _**Output:** "These words are anagrams!"_
-
-    * _**Spec:**  Accounts for differing cases of characters._
-      * _**Input:** "Eat", "Tea"_
-      * _**Output:** "These words are anagrams!"_
-
-    * _**Spec:** Checks if inputs are words._
-      * _**Input:** "Wkjzy", "fjklmpqtz"_
-      * _**Output:** "You need to input actual words!"_
-
-    * _**Spec:** Checks if words that aren't anagrams are antigrams._
-      * _**Input:** "Eat", "Bin"_
-      * _**Output:** "These words are not anagrams, but they are antigrams!"_
-
-
-    * _**Spec:** Accounts for multiple words while ignoring spaces and punctuation and making sure each word inputted is an actual word._
-      * _**Input:** "Ruby is pretty cool", "I know, right?"_
-      * _**Output:** "These words are neither anagrams nor antigrams!"_
+    _This is application that contains a Word class. The homepage of the app should list all words. When a word is clicked, it should lead to a page with the word's definitions. Children should be able to add a word, and when viewing a word, be able to add, update or delete one or more definitions._
 
     ## Setup/Installation Requirements
 
-    * _Open terminal_
-    * _git clone https://github.com/eliza85/anagrams_and-antigrams.git_
-    * _Navigate to project folder in terminal_
-    * _Enter "bundler install"_
-    * _Enter "ruby script.rb"_
-    * _Enter your first word or sentence_
-    * _Enter your second word or sentence_
-    * _Press key Y to continue, or N to exit program_
+    * _Go to https://vast-waters-03438.herokuapp.com/ _
+    * _Enter a word_
+    * _Add a definition_
+    * _Admire your work_
 
     ## Known Bugs
 
-    * _No known bugs._
+    * _Background image does not display in Heroku_
+    * _Definitions don't display, whyyyyy_
 
     ## Support and contact details
 
@@ -78,6 +52,10 @@
 
     * _Ruby_
     * _Markdown_
+    * _CSS_
+    * _HTML5_
+    * _Sinatra_
+    * _Heroku_
 
     ### License
 
