@@ -66,8 +66,8 @@ end
 
 patch('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
-  definition = Definition.new(params[:definition_name], @word.id, nil)
-  definition.save()
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update(params[:name], @word.id)
   erb(:word)
 end
 
