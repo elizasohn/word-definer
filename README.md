@@ -35,6 +35,12 @@ _This is application that contains a Word class. The homepage of the app should 
 ## Setup/Installation Requirements
 
 * _Go to https://vast-waters-03438.herokuapp.com/ _
+* _Alternately, in terminal type "git clone https://github.com/eliza85/word-definer.git"_
+* _Navigate into directory by typing "cd word-definitions"_
+* _Type "bundle" to bundle gems_
+* _Type "app ruby.rb" to run on local server_
+* _Terminal should say "Sinatra has taken the stage on 4567", your numbers may vary_
+* _Enter "localhost:4567" (or whatever numbers terminal supplies) into web browser to run locally_
 * _Enter a word_
 * _Add a definition_
 * _Admire your work_
